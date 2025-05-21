@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import './signUp.css'
 import axios from 'axios';
+import Logo from './Images/logo.png'
 
 const SignUp = () => {
     const [email, setEmail] = useState('');
@@ -25,6 +26,12 @@ const SignUp = () => {
     return (
     <>
         <form onSubmit={handleSubmit}>
+            <div>
+                <img src={Logo} alt="Logo" style={{
+                    width: '180px',
+                    height: '150px',
+                }}/>
+            </div>
             <h1>Create an account</h1>
             <h3>Already have an account? <a href="/login">Login</a></h3>
             <div>
