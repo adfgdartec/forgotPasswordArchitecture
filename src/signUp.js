@@ -2,8 +2,9 @@ import {useState} from 'react';
 import './signUp.css'
 import axios from 'axios';
 import Logo from './Images/logo.png'
-
+import {useNavigate} from 'react-router-dom'
 const SignUp = () => {
+    const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [fullName, setFullName] = useState('');
@@ -16,7 +17,8 @@ const SignUp = () => {
                 email, 
                 password
             });
-            alert('Signup successful! Check your email to confirm.'); 
+            navigate('/dashboard')
+            
         } catch (err) {
             console.error('Full signup error:', err);
             console.log('Error response data:', err.response?.data);
